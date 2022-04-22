@@ -155,7 +155,7 @@ class ApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(view().name("homes/detalles"))
                 .andExpect(model().attribute("Detail", goHome))
-                .andExpect(model().attribute("titulo", "Detalles de la Casa"));
+                .andExpect(model().attribute("title", "Detalles de la Casa"));
     }
 
 
