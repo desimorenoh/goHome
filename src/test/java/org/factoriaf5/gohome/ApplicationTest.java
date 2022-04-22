@@ -151,9 +151,9 @@ class ApplicationTests {
     @WithMockUser
     void returnsAViewDetails() throws Exception {
         GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", "700", "670m2", "Magnífico piso con reforma integral en 2020", "5"));
-        mockMvc.perform(get("/homes/detalles/" + goHome.getId()))
+        mockMvc.perform(get("/homes/details/" + goHome.getId()))
                 .andExpect(status().isOk())
-                .andExpect(view().name("homes/detalles"))
+                .andExpect(view().name("homes/details"))
                 .andExpect(model().attribute("Detail", goHome))
                 .andExpect(model().attribute("title", "Detalles de la Casa"));
     }

@@ -72,12 +72,12 @@ public class GoHomeController {
     }
 
 
-    @GetMapping("/homes/detalles/{id}")
+    @GetMapping("/homes/details/{id}")
     String GoHomeDetalle(Model model, @PathVariable Long id) {
         GoHome goHome = goHomeRepository.findById(id).get();
         model.addAttribute("Detail", goHome);
         model.addAttribute("title", "Detalles de la Casa");
-        return "homes/detalles";
+        return "homes/details";
     }
 
 }
