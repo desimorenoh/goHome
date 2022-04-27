@@ -22,7 +22,7 @@ public class UnitTests {
         assertThat(goHome.getPrice(), equalTo(700));
         assertThat(goHome.getSurface(), equalTo(670));
         assertThat(goHome.getDescription(), equalTo("El piso está situado en una zona bien central con muchas tiendas, restaurantes, supermercados y sistemas de transporte cercanos"));
-        assertThat(goHome.getBedrooms(), equalTo("5"));
+        assertThat(goHome.getBedrooms(), equalTo(5));
     }
 
     @Test
