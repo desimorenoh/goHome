@@ -19,6 +19,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/*
 @SpringBootTest
 @AutoConfigureMockMvc
 class ClientApplicationTests {
@@ -53,7 +54,7 @@ class ClientApplicationTests {
                 .andExpect(model().attribute("title", "Solicitar Información"));
     }
 
-    /*@Test
+   @Test
     @WithMockUser
     void allowsToCreateANewClient() throws Exception {
         mockMvc.perform(post("/homes/info")
@@ -74,5 +75,5 @@ class ClientApplicationTests {
                 hasProperty("phone", equalTo("623.25.25.12")),
                 hasProperty("message", equalTo("hola quiero info"))
         )));
-    }*/
-}
+    }
+}*/
