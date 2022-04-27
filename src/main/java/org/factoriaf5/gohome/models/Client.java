@@ -1,4 +1,4 @@
-package org.factoriaf5.gohome.repositories;
+package org.factoriaf5.gohome.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,7 +12,7 @@ public class Client implements Serializable {
     private Long id;
     private String name;
     private String email;
-    private String phone;
+    private int phone;
     @Lob
     private String message;
 
@@ -20,7 +20,7 @@ public class Client implements Serializable {
 
     }
 
-    public Client(String name, String email, String phone, String message) {
+    public Client(String name, String email, int phone, String message) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -51,11 +51,11 @@ public class Client implements Serializable {
         this.email = email;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 

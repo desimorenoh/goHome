@@ -2,7 +2,7 @@ package org.factoriaf5.gohome.controller;
 
 import org.factoriaf5.gohome.repositories.ClientRepository;
 import org.factoriaf5.gohome.repositories.CategoryRepository;
-import org.factoriaf5.gohome.repositories.GoHome;
+import org.factoriaf5.gohome.models.GoHome;
 import org.factoriaf5.gohome.repositories.GoHomeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

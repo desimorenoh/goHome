@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-<head th:replace="fragments/head"></head>
+<head th:replace="fragments/head">
+
+</head>
 
 <body>
 <header th:replace="fragments/header"></header>
@@ -12,16 +14,16 @@
             Nuevo</a>
 
     </div>
-    <h1 class="titleadd" style="text-align: center" th:text="${title}"></h1>
+    <h1 class="titleAdd" style="text-align: center" th:text="${title}"></h1>
 
 
     <div class="d-flex flex-row flex-wrap justify-content-center bd-highlight">
         
-            <div th:each="goHome: ${homes}" class="card block m-3 " style="width: 30rem; height: 30rem; box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);">
+            <div th:each="goHome: ${homes}" class="card block m-3 front-card">
             <a class="h-50" th:href="'/homes/details/'+${goHome.id}"><img th:src="${goHome.image}"
                                                                             class="card-img-top h-100" alt="cover"></a>
             <div class="block_body block_body_cat">
-                <h5 class="card-title ml-1 "><i class="bi bi-house-fill"></i> [[${goHome.title}]]</h5>
+                <h5 class="card-title ml-1"><i class="bi bi-house-fill"></i> [[${goHome.title}]]</h5>
                 <ul class="list-group list-group-flush mb-3">
                     <li th:text="${goHome.id}" class="list-group-item item-all" style="display:none;"></li>
                     <li th:text="${goHome.description}" class="list-group-item item-all"></li>
@@ -30,6 +32,9 @@
                             th:src="@{/img/cama.png}" width="20rem"> [[${goHome.bedrooms}]].
                     </li>
                 </ul>
+                <div class="text-center">
+                    <a class="btn btn-sm my-2 mb-5 button-information edit-btn" href="/homes/info" sec:authorize="isAnonymous()">Información</a>
+                </div>
                 <div class="d-flex justify-content-center">
                     <a class="btn button-edit btn-sm mb-5 edit-btn" style="margin-right: .5rem;"
                        th:href="'/homes/edit/'+${goHome.id}"

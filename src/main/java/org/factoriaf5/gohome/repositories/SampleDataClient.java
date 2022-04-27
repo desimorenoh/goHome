@@ -1,4 +1,4 @@
-package org.factoriaf5.gohome.models;
+package org.factoriaf5.gohome.repositories;
 
 import org.factoriaf5.gohome.models.Client;
 import org.factoriaf5.gohome.repositories.ClientRepository;
@@ -25,15 +25,15 @@ public class SampleDataClient {
 
                 new Client("Maria Trello",
                         "mariatrello@gmail.com",
-                        "652.35.54.87",
+                        652355487,
                         "Buen día necesito información de ésta casa. Favor contactar después de las 17"),
                 new Client("Jose Peña",
                         "Jose2578@gmail.com",
-                        "875.25.25.47",
+                        875252547,
                         "Buenas tardes requiero información de ésta casa. Favor contactar después de las 20"),
                 new Client("Roger",
                         "adevintaspain@adevinta.com",
-                        "548.54.25.25",
+                        548542525,
                         "Buen día :)")
 
         ));

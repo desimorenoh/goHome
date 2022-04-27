@@ -26,7 +26,7 @@
             </ul>
             <div class="d-flex justify-content-between">
                 <form class="d-flex gap-2 px-5" action="/homes/search" method="get">
-                    <input name="word" class="form-control my-2" style="width: 170px;" type="search" placeholder="Introduce datos" aria-label="Search">
+                    <input name="word" class="form-control my-2 search-bar" type="search" placeholder="Introduce datos" aria-label="Search">
                     <button class="button-search my-2" type="submit">Buscar</button>
                 </form>
                 <form th:action="@{/login}" method="get" sec:authorize="isAnonymous()">

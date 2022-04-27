@@ -1,6 +1,6 @@
 package org.factoriaf5.gohome.controller;
 
-import org.factoriaf5.gohome.repositories.Client;
+import org.factoriaf5.gohome.models.Client;
 import org.factoriaf5.gohome.repositories.ClientRepository;
 import org.factoriaf5.gohome.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;

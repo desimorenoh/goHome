@@ -1,8 +1,7 @@
 package org.factoriaf5.gohome;
 
-import org.factoriaf5.gohome.repositories.Client;
+import org.factoriaf5.gohome.models.Client;
 import org.factoriaf5.gohome.repositories.ClientRepository;
-import org.factoriaf5.gohome.repositories.GoHomeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

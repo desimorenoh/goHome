@@ -1,14 +1,14 @@
-package org.factoriaf5.gohome.repositories;
+package org.factoriaf5.gohome.models;
 
 public class Category {
-    private final int bedrooms;
+    private final String bedrooms;
 
-    public Category(int bedrooms) {
+    public Category(String bedrooms) {
 
         this.bedrooms = bedrooms;
     }
 
-    public int getBedrooms() {
+    public String getBedrooms() {
         return bedrooms;
     }
 

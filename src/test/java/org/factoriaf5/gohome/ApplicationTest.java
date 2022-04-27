@@ -1,6 +1,6 @@
 package org.factoriaf5.gohome;
 
-import org.factoriaf5.gohome.repositories.GoHome;
+import org.factoriaf5.gohome.models.GoHome;
 import org.factoriaf5.gohome.repositories.GoHomeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,7 +48,7 @@ class ApplicationTests {
     @WithMockUser
     void returnsTheExistingHomes() throws Exception {
 
-        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", "700", "670m2", "Magnífico piso con reforma integral en 2020", "5"));
+        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", 700, 670, "Magnífico piso con reforma integral en 2020", 5));
 
         mockMvc.perform(get("/homes"))
                 .andExpect(status().isOk())
@@ -82,10 +82,10 @@ class ApplicationTests {
                         .with(csrf())
                         .param("title", "Villarrapa")
                         .param("image", "https://www.miamiinmuebles.com/images/mls/A/10723310/1.jpg")
-                        .param("price", "300")
-                        .param("surface", "350m2")
+                        .param("price", String.valueOf(300))
+                        .param("surface", String.valueOf(350))
                         .param("description", "Magnífico piso con reforma integral en 2020")
-                        .param("bedrooms", "2")
+                        .param("bedrooms", String.valueOf(2))
                 )
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/homes"))
@@ -95,17 +95,17 @@ class ApplicationTests {
         assertThat(existingHomes, contains(allOf(
                 hasProperty("title", equalTo("Villarrapa")),
                 hasProperty("image", equalTo("https://www.miamiinmuebles.com/images/mls/A/10723310/1.jpg")),
-                hasProperty("price", equalTo("300")),
-                hasProperty("surface", equalTo("350m2")),
+                hasProperty("price", equalTo(300)),
+                hasProperty("surface", equalTo(350)),
                 hasProperty("description", equalTo("Magnífico piso con reforma integral en 2020")),
-                hasProperty("bedrooms", equalTo("2"))
+                hasProperty("bedrooms", equalTo(2))
         )));
     }
 
     @Test
     @WithMockUser
     void returnsAFormToEditHomes() throws Exception {
-        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", "700", "670m2", "Magnífico piso con reforma integral en 2020", "5"));
+        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", 700, 670, "Magnífico piso con reforma integral en 2020", 5));
         mockMvc.perform(get("/homes/edit/" + goHome.getId()))
                 .andExpect(status().isOk())
                 .andExpect(view().name("homes/edit"))
@@ -124,7 +124,7 @@ class ApplicationTests {
     @Test
     @WithMockUser
     void allowsToDeleteAHome() throws Exception {
-        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", "700", "670m2", "Magnífico piso con reforma integral en 2020", "5"));
+        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", 700, 670, "Magnífico piso con reforma integral en 2020", 5));
         mockMvc.perform(get("/homes/delete/" + goHome.getId()))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/homes"));
@@ -136,8 +136,8 @@ class ApplicationTests {
     @WithMockUser
     void allowsToSearchHomesByWord() throws Exception {
 
-        GoHome goHomeWithWord = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", "700", "670m2", "Magnífico piso con reforma integral en 2020", "5"));
-        GoHome goHomeWithoutWord = goHomeRepository.save(new GoHome("Villarrapa", "https://www.miamiinmuebles.com/images/mls/A/10723310/1.jpg", "300", "350m2", "", "2"));
+        GoHome goHomeWithWord = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", 700, 670, "Magnífico piso con reforma integral en 2020", 5));
+        GoHome goHomeWithoutWord = goHomeRepository.save(new GoHome("Villarrapa", "https://www.miamiinmuebles.com/images/mls/A/10723310/1.jpg", 300, 350, "", 2));
 
         mockMvc.perform(get("/homes/search?word=Napoles"))
                 .andExpect(status().isOk())
@@ -150,15 +150,12 @@ class ApplicationTests {
     @Test
     @WithMockUser
     void returnsAViewDetails() throws Exception {
-        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", "700", "670m2", "Magnífico piso con reforma integral en 2020", "5"));
+        GoHome goHome = goHomeRepository.save(new GoHome("Napoles", "http://2.bp.blogspot.com/-CPACB1sSmGs/Unvq3fKG4uI/AAAAAAAAHd8/iJoo2HB7dG4/s1600/fachada-de-casa-moderna-de-ladrillo-visto-de-2-pisos.jpg", 700, 670, "Magnífico piso con reforma integral en 2020", 5));
         mockMvc.perform(get("/homes/details/" + goHome.getId()))
                 .andExpect(status().isOk())
                 .andExpect(view().name("homes/details"))
                 .andExpect(model().attribute("Detail", goHome))
                 .andExpect(model().attribute("title", "Detalles de la Casa"));
     }
-
-
-
 
 }

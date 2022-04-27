@@ -4,6 +4,13 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+.container-details {
+    width: 100%;
+}
+
+.search-bar {
+    width: 170px;
+}
 
 h1 {
     text-align: center;
@@ -20,8 +27,8 @@ img.banner{
    }
 .fade-effect {
     background: rgb(47, 155, 255, 0.8); 
-    width: 50%; 
-    
+    width: 50%;
+
     height: 80vh;
     color: white;
     font-size: 3em;
@@ -40,7 +47,7 @@ img.banner{
     outline: none;
     border-radius: 5px;
     border: none;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0 rgba(0,0,0,.1), 4px 4px 5px 0 rgba(0,0,0,.1);
     background: #2F9BFE;
   }
   .button-search:hover, .button-information:hover {
@@ -50,7 +57,7 @@ img.banner{
   .button-search:active, .button-information:active {
     color: #fff;
     top: 2px;
-    
+
   }
 .footer {
     background-color: #ffffff;
@@ -60,7 +67,7 @@ img.banner{
 }
 .button-login {
     background-color:#55E2C0;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px #0000001a, 4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0 #0000001a, 4px 4px 5px 0 rgba(0,0,0,.1);
 }
 .button-login:hover {
     background-color: #15c49b;
@@ -68,7 +75,7 @@ img.banner{
 
 .button-logout {
     background-color:#505feb;
-    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0 rgba(0,0,0,.1), 4px 4px 5px 0 rgba(0,0,0,.1);
 }
 .button-logout:hover {
     background-color:#2134e7;
@@ -94,7 +101,7 @@ img.banner{
 .navClase ul li a:hover{
     border-radius: 1.5rem;
     color: rgb(207, 207, 207);
-   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #55E2C0, 0 0 30px #55E2C0, 0 0 40px #55E2C0, 0 0 55px #55E2C0, 0 0 75px #55E2C0, -40px -40px 0px rgba(85,226,192,0);
+   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #55E2C0, 0 0 30px #55E2C0, 0 0 40px #55E2C0, 0 0 55px #55E2C0, 0 0 75px #55E2C0, -40px -40px 0 rgba(85,226,192,0);
     }
 
 .circle{
@@ -159,7 +166,7 @@ img.banner{
     border-bottom-right-radius: 30px;
     color: #9fadca;
     border-top: 1px solid #dee9ff;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
 }
 
 .registration-form .social-icons{
@@ -186,19 +193,6 @@ img.banner{
     opacity: 0.6;
 }
 
-@media (max-width: 576px) {
-    .registration-form form{
-        padding: 50px 20px;
-    }
-
-    .registration-form .form-icon{
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-        line-height: 70px;
-    }
-}
-
 .limiter {
     width: 100%;
     margin: 0 auto;
@@ -209,7 +203,7 @@ img.banner{
     min-height: 100vh;
     background: #c850c0;
     background: linear-gradient(45deg, #4158d0, #c850c0);
-  
+
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -226,7 +220,7 @@ img.banner{
   }
   
   table {
-    border-spacing: 1;
+    border-spacing: 1px;
     border-collapse: collapse;
     background: white;
     border-radius: 10px;
@@ -292,70 +286,7 @@ img.banner{
     background-color: #f5f5f5;
     cursor: pointer;
   }
-  
-    
-  @media screen and (max-width: 992px) {
-    table {
-      display: block;
-    }
-    table > *, table tr, table td, table th {
-      display: block;
-    }
-    table thead {
-      display: none;
-    }
-    table tbody tr {
-      height: auto;
-      padding: 37px 0;
-    }
-    table tbody tr td {
-      padding-left: 40% !important;
-      margin-bottom: 24px;
-    }
-    table tbody tr td:last-child {
-      margin-bottom: 0;
-    }
-    table tbody tr td:before {
-      font-size: 14px;
-      color: #999999;
-      line-height: 1.2;
-      font-weight: unset;
-      position: absolute;
-      width: 40%;
-      left: 30px;
-      top: 0;
-    }
-    table tbody tr td:nth-child(1):before {
-      content: "Date";
-    }
-    table tbody tr td:nth-child(2):before {
-      content: "Order ID";
-    }
-    table tbody tr td:nth-child(3):before {
-      content: "Name";
-    }
-    table tbody tr td:nth-child(4):before {
-      content: "Price";
-    }
-    table tbody tr td:nth-child(5):before {
-      content: "Quantity";
-    }
-    table tbody tr td:nth-child(6):before {
-      content: "Total";
-    }
-  
-    
-    tbody tr {
-      font-size: 14px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .container-table100 {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
+
 .button-add-home {
         min-width: 200px;
         height: 60px;
@@ -371,9 +302,8 @@ img.banner{
         border: none;
         background-size: 120% auto;
         background-image: linear-gradient(315deg, #2F9BFE 0%, #55E2C0 75%);
-        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+        box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0 rgba(0,0,0,.1), 4px 4px 5px 0 rgba(0,0,0,.1);
 }
-      
 
 .button-add-home:hover {
         background-position: right center;
@@ -434,5 +364,87 @@ img.banner{
         box-shadow: 0 0 #e93058;
         top: 5px;
 }
+.required {
+    color: red;
+}
+.front-card {
+    width: 30rem;
+    height: 30rem;
+    box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0
+    rgba(0,0,0,.1), 4px 4px 5px 0 rgba(0,0,0,.1);
+}
+.titleAdd {
+    text-align: center;
+}
+@media (max-width: 576px) {
+    .registration-form form{
+        padding: 50px 20px;
+    }
+
+    .registration-form .form-icon{
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        line-height: 70px;
+    }
+    .container-table100 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    table {
+        display: block;
+    }
+    table > *, table tr, table td, table th {
+        display: block;
+    }
+    table thead {
+        display: none;
+    }
+    table tbody tr {
+        height: auto;
+        padding: 37px 0;
+    }
+    table tbody tr td {
+        padding-left: 40% !important;
+        margin-bottom: 24px;
+    }
+    table tbody tr td:last-child {
+        margin-bottom: 0;
+    }
+    table tbody tr td:before {
+        font-size: 14px;
+        color: #999999;
+        line-height: 1.2;
+        font-weight: unset;
+        position: absolute;
+        width: 40%;
+        left: 30px;
+        top: 0;
+    }
+    table tbody tr td:nth-child(1):before {
+        content: "Date";
+    }
+    table tbody tr td:nth-child(2):before {
+        content: "Order ID";
+    }
+    table tbody tr td:nth-child(3):before {
+        content: "Name";
+    }
+    table tbody tr td:nth-child(4):before {
+        content: "Price";
+    }
+    table tbody tr td:nth-child(5):before {
+        content: "Quantity";
+    }
+    table tbody tr td:nth-child(6):before {
+        content: "Total";
+    }
 
 
+    tbody tr {
+        font-size: 14px;
+    }
+}

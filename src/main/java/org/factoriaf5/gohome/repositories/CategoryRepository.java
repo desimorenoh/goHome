@@ -1,5 +1,6 @@
 package org.factoriaf5.gohome.repositories;
 
+import org.factoriaf5.gohome.models.Category;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

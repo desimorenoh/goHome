@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/index", "/img/**", "/static/**", "/css/**", "/login", "/homes/info", "/homes/**").permitAll()
+                .antMatchers("/", "/home", "/index", "/img/**", "/static/**", "/css/**", "/login", "/homes/info", "/homes").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().defaultSuccessUrl("/", true)
@@ -32,6 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public UserDetailsService userDetailsService() {
         UserDetails user =
+                //this method is not safe for @Profile("!prod")
                 User.withDefaultPasswordEncoder()
                         .username("user")
                         .password("password")

@@ -1,4 +1,4 @@
-package org.factoriaf5.gohome.repositories;
+package org.factoriaf5.gohome.models;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,16 +13,16 @@ public class GoHome implements Serializable {
     private Long id;
     private String title;
     private String image;
-    private String price;
-    private String surface;
+    private int price;
+    private int surface;
     private String description;
-    private String bedrooms;
+    private int bedrooms;
 
     public GoHome() {
 
     }
 
-    public GoHome(String title, String image, String price, String surface, String description, String bedrooms) {
+    public GoHome(String title, String image, int price, int surface, String description, int bedrooms) {
         this.title = title;
         this.image = image;
         this.price = price;
@@ -55,19 +55,19 @@ public class GoHome implements Serializable {
         this.image = image;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public String getSurface() {
+    public int getSurface() {
         return surface;
     }
 
-    public void setSurface(String surface) {
+    public void setSurface(int surface) {
         this.surface = surface;
     }
 
@@ -79,11 +79,11 @@ public class GoHome implements Serializable {
         this.description = description;
     }
 
-    public String getBedrooms() {
+    public int getBedrooms() {
         return bedrooms;
     }
 
-    public void setBedrooms(String bedrooms) {
+    public void setBedrooms(int bedrooms) {
         this.bedrooms = bedrooms;
 
     }
@@ -98,6 +98,7 @@ public class GoHome implements Serializable {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(id, title, image, price, surface, description, bedrooms);
     }
 }

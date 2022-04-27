@@ -14,11 +14,11 @@ public class CategoryRepositoryTest {
 
 
         assertThat(categoryRepository.findAll(), hasItems(
-                hasProperty("name", is("1")),
-                hasProperty("name", is("2")),
-                hasProperty("name", is("3")),
-                hasProperty("name", is("4")),
-                hasProperty("name", is("5"))
+                hasProperty("bedrooms", is("1")),
+                hasProperty("bedrooms", is("2")),
+                hasProperty("bedrooms", is("3")),
+                hasProperty("bedrooms", is("4")),
+                hasProperty("bedrooms", is("5"))
 
         ));
     }

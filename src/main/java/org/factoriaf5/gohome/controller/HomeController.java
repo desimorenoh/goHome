@@ -29,6 +29,7 @@ public HomeController(GoHomeRepository goHomeRepository, CategoryRepository filt
 
     @GetMapping("/login")
     public String login() {
+
         return "login";
     }
 }
