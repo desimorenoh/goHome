@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/*@SpringBootTest
+@SpringBootTest
 public class UnitTests {
 
 
@@ -46,4 +46,4 @@ public class UnitTests {
     }
 
 
-}*/
+}
