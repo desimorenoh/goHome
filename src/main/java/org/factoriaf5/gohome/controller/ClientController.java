@@ -44,6 +44,6 @@ public class ClientController {
     @PostMapping("/homes/info")
     String addClient(@ModelAttribute Client client) {
         clientRepository.save(client);
-        return "redirect:/homes";
+        return "redirect:/";
     }
 }

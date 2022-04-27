@@ -66,11 +66,11 @@ class ApplicationTests {
                 .andExpect(model().attributeExists("goHome"))
                 .andExpect(model().attribute("title", "Añadir una nueva Casa"))
                 .andExpect(model().attribute("categories", hasItems(
-                    hasProperty("name", is("1")),
-                    hasProperty("name", is("2")),
-                    hasProperty("name", is("3")),
-                    hasProperty("name", is("4")),
-                    hasProperty("name", is("5"))
+                    hasProperty("bedrooms", is("1")),
+                    hasProperty("bedrooms", is("2")),
+                    hasProperty("bedrooms", is("3")),
+                    hasProperty("bedrooms", is("4")),
+                    hasProperty("bedrooms", is("5"))
         )));
     }
 
@@ -112,11 +112,11 @@ class ApplicationTests {
                 .andExpect(model().attribute("goHome", goHome))
                 .andExpect(model().attribute("title", "Editar Casa"))
                 .andExpect(model().attribute("categories", hasItems(
-                    hasProperty("name", is("1")),
-                    hasProperty("name", is("2")),
-                    hasProperty("name", is("3")),
-                    hasProperty("name", is("4")),
-                    hasProperty("name", is("5"))
+                    hasProperty("bedrooms", is("1")),
+                    hasProperty("bedrooms", is("2")),
+                    hasProperty("bedrooms", is("3")),
+                    hasProperty("bedrooms", is("4")),
+                    hasProperty("bedrooms", is("5"))
                 )));
     }
 
