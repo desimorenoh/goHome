@@ -1,5 +1,7 @@
-package org.factoriaf5.gohome.repositories;
+package org.factoriaf5.gohome.models;
 
+import org.factoriaf5.gohome.models.Client;
+import org.factoriaf5.gohome.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,7 +34,7 @@ public class SampleDataClient {
                 new Client("Roger",
                         "adevintaspain@adevinta.com",
                         "548.54.25.25",
-                        "Buen día necesito no nos hagan competencia :)")
+                        "Buen día :)")
 
         ));
     }
