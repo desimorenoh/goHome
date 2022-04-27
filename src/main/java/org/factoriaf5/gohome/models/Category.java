@@ -1,15 +1,15 @@
 package org.factoriaf5.gohome.repositories;
 
 public class Category {
-    private final String name;
+    private final int bedrooms;
 
-    public Category(String name) {
+    public Category(int bedrooms) {
 
-        this.name = name;
+        this.bedrooms = bedrooms;
     }
 
-    public String getName() {
-        return name;
+    public int getBedrooms() {
+        return bedrooms;
     }
 
 }
