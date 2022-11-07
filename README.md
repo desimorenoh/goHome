@@ -21,6 +21,10 @@ Bootstrap 5
 ### Comenzando 🚀
 Hackathon F5: Creación de un Marketplace, con operaciones CRUD
 Securing Web, Barra de Búsqueda, Formulario para Contacto.
+Para poder hacer login debe usar:
+usuario: user  
+contraseña: password
+
 
 ### Comandos de compilación rápida </>
 #### Ver versión de compilación
